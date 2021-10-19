@@ -1,0 +1,220 @@
+tag: proj2
+data_loader:
+  config:
+    books:
+      The_Circular_Staircase:
+        url: https://www.gutenberg.org/files/434/434-0.txt
+        detectives:
+          - Mr. Jamieson:
+            - mr. jamieson
+            - jamieson
+            - mr. winters
+            - detective
+            - winters
+        suspects:
+          - Gertrude Innes: 
+            - gertrude innes
+            - miss gertrude innes
+            - miss gertrude
+            - gertrude
+            - miss innes
+            - mis’ innes
+          - John Bailey:
+            - john bailey
+            - jack bailey
+            - mr. bailey
+            - bailey
+            - alex
+            - alexander graham
+          - Halsey Innes:
+            - halsey innes
+            - mr. halsey
+            - halsey
+            - mr. innes
+        perpetrator:
+          - Anne Watson:
+            - anne watson
+            - mrs. watson
+            - mis’ watson
+        crime:
+          crime_details:
+            or_words:
+              - killed
+              - shot
+              - body
+            positive_lookeaheads:
+              - revolver
+          crime_type:
+            or_words:
+                - fired
+                - killed
+                - murdered
+            positive_lookeaheads:
+                - bullet
+      The_Man_in_Lower_Ten:
+        url: https://www.gutenberg.org/files/1869/1869-0.txt
+        detectives:
+          - Richey McKnight: 
+            - richey mcknight
+            - mcknight
+            - mr. mcknight
+            - richey
+        suspects:
+          - Wilson Budd Hotchkiss:
+            - wilson budd hotchkiss
+            - hotchkiss
+            - mr. hotchkiss
+          - Henry Pinckney Sullivan:
+            - henry pinckney sullivan
+            - henry sullivan
+            - sullivan
+            - mr. sullivan
+          - Alison West:
+            - alison west
+            - alison
+            - miss west
+        perpetrator:
+          - Alice Curtis:
+            - mrs. curtis
+            - curtis
+            - alice
+            - alice curtis
+        crime:
+          crime_details:
+            or_words:
+              - body
+            positive_lookeaheads: null
+          crime_type:
+            or_words:
+              - stabbed
+              - shot
+            positive_lookeaheads:
+              - body
+      The_After_House:
+        url: https://gutenberg.org/files/2358/2358-0.txt
+        detectives:
+          - McWhirter:
+            - mcwhirter
+            - mr. mcwhirter
+        suspects:
+          - Marshall Benedict Turner:
+            - marshall turner
+            - marshall benedict turner
+            - marshall
+            - benedict Turner
+            - mistah Turner
+            - turner
+          - Singleton:
+            - singleton
+          - John Oleson:
+            - John Oleson
+            - Swede Oleson
+            - Swede
+            - Oleson
+        perpetrator:
+          - Charlie Jones:
+            - charlie jones
+            - charlie
+            - jones
+        crime:
+          crime_details:
+            or_words:
+              - pieces
+              - dead
+              - killed
+            positive_lookeaheads:
+              - cut
+          crime_type:
+            or_words:
+              - pieces
+              - dead
+              - killed
+            positive_lookeaheads:
+              - cut
+      The_Window_at_the_White_Cat:
+        url: https://www.gutenberg.org/cache/epub/34020/pg34020.txt
+        detectives:
+          - Al Hunter:
+            - al hunter
+            - hunter
+        suspects:
+          - Harry Wardrop:
+            - harry wardrop
+            - wardrop
+            - harry
+          - Henry Schwartz:
+            - henry schwartz 
+            - schwartz
+        perpetrator:
+          - Ellen Butler:
+            - ellen butler
+            - mrs. butler
+        crime:
+          crime_details:
+            or_words:
+              - shot
+              - killed
+              - murdered
+            positive_lookeaheads:
+              - fleming
+          crime_type:
+            or_words:
+              - shot
+              - killed
+              - murdered
+            positive_lookeaheads:
+              - fleming
+      The_Bat:
+        url: https://www.gutenberg.org/cache/epub/2019/pg2019.txt
+        detectives:
+          - Anderson:
+              - anderson
+              - mr. anderson
+        suspects:
+          - Miss Cornelia:
+              - miss cornelia
+          - Brooks:
+              - brooks
+          - Doctor Wells:
+              - doctor wells
+        perpetrator:
+          - The Bat:
+              - bat
+              - the bat
+        crime:
+          crime_details:
+            or_words:
+              - rang
+            positive_lookeaheads:
+              - shot
+          crime_type:
+            or_words:
+              - shot
+              - stabbed
+            positive_lookeaheads:
+              - fleming
+
+
+
+# --- More books --- 
+# The_Window_at_the_White_Cat: https://www.gutenberg.org/cache/epub/34020/pg34020.txt
+# The_Amazing_Interlude: https://www.gutenberg.org/cache/epub/1590/pg1590.txt
+# Dangerous_Days: https://www.gutenberg.org/files/1693/1693-0.txt
+# The_Case_of_Jennie_Brice: https://www.gutenberg.org/cache/epub/11127/pg11127.txt
+# The_After_House: https://www.gutenberg.org/files/2358/2358-0.txt
+# The_Street_of_Seven_Stars: https://www.gutenberg.org/files/1214/1214-0.txt
+# When_a_Man_Marries: https://www.gutenberg.org/files/1671/1671-0.txt
+# Locked_Doors: https://www.gutenberg.org/files/54273/54273-0.txt
+# The_Bat: https://www.gutenberg.org/cache/epub/2019/pg2019.txt
+# The_Confession: https://www.gutenberg.org/cache/epub/1963/pg1963.txt
+# Bab:_A_Sub-Deb: https://www.gutenberg.org/cache/epub/366/pg366.txt
+# Tenting_To-night: https://www.gutenberg.org/cache/epub/19475/pg19475.txt
+# Long_Live_the_King: https://www.gutenberg.org/files/2714/2714-0.txt
+# Affinities and Other Stories: https://www.gutenberg.org/cache/epub/41408/pg41408.txt
+# Sight_Unseen: https://www.gutenberg.org/files/1960/1960-0.txt
+# Tish,_The_Chronicle_of_Her_Escapades_and_Excursions: https://www.gutenberg.org/cache/epub/3464/pg3464.txt
+# A_Poor_Wise_Man: https://www.gutenberg.org/files/1970/1970-0.txt
+# The_Truce_of_God: https://www.gutenberg.org/cache/epub/14573/pg14573.txt
+# More_Tish: https://www.gutenberg.org/cache/epub/19851/pg19851.txt
+# Where_Theres_A_Will: https://www.gutenberg.org/cache/epub/330/pg330.txt
+# K: https://www.gutenberg.org/files/9931/9931-0.txt

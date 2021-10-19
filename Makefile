@@ -6,7 +6,7 @@ PYTHON_VERSION=3.9
 # You can use either venv (virtualenv) or conda env by specifying the correct argument [env=<conda|venv>]>
 ifeq ($(env),conda)
 	# Use Conda
-	BASE=~/anaconda3/envs/rinehartAnalysis
+	BASE=~/anaconda3/envs/rinehartAnalysis_wordVectors
 	BIN=$(BASE)/bin
 	CLEAN_COMMAND="conda env remove -p $(BASE)"
 	CREATE_COMMAND="conda create --prefix $(BASE) python=$(PYTHON_VERSION) -y"
@@ -22,7 +22,7 @@ else ifeq ($(env),circleci)
 	DEBUG=False
 else
 	# Use Conda
-	BASE=~/anaconda3/envs/rinehartAnalysis
+	BASE=~/anaconda3/envs/rinehartAnalysis_wordVectors
 	BIN=$(BASE)/bin
 	CLEAN_COMMAND="conda env remove -p $(BASE)"
 	CREATE_COMMAND="conda create --prefix $(BASE) python=$(PYTHON_VERSION) -y"
