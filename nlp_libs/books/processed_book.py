@@ -5,13 +5,12 @@ from nlp_libs.fancy_logger.colorized_logger import ColorizedLogger
 
 #logger = ColorizedLogger(logger_name='Process Book', color='cyan')
 
-
 class ProcessedBook:
     title: str
     protagonists: Dict
-    antagonists: Dict
-    crime_object: Dict
-    crime_scene: Dict
+    antagonist: Dict
+    crime_weapon: Dict
+    crime_objects: Dict
 
     def __init__(self, title: str, metadata: Dict):
         """
@@ -20,10 +19,10 @@ class ProcessedBook:
         from the first chapter and ending with the last sentence.
         """
         self.title = title
-        #self.protagonists = metadata['protagonists']
-        #self.antagonists = metadata['antagonists']
-        #self.crime_object = metadata['crime']['crime_object']
-        #self.crime_scene = metadata['crime']['crime_scene']
+        self.protagonists = metadata['protagonists']
+        self.antagonist = metadata['antagonist']
+        self.crime_weapon = metadata['crime']['crime_weapon']
+        self.crime_objects = metadata['crime']['crime_objects']
 
         self.raw = self.read_book_from_proj_gut(metadata['url'])
         self.book_lines = self.get_book_lines_from_raw()

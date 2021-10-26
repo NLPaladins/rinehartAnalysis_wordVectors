@@ -4,195 +4,89 @@ data_loader:
     books:
       The_Circular_Staircase:
         url: https://www.gutenberg.org/files/434/434-0.txt
-        detectives:
+        protagonists:
           - Mr. Jamieson:
             - mr. jamieson
             - jamieson
             - mr. winters
             - detective
             - winters
-        suspects:
-          - Gertrude Innes: 
-            - gertrude innes
-            - miss gertrude innes
-            - miss gertrude
-            - gertrude
-            - miss innes
-            - mis’ innes
-          - John Bailey:
-            - john bailey
-            - jack bailey
-            - mr. bailey
-            - bailey
-            - alex
-            - alexander graham
-          - Halsey Innes:
-            - halsey innes
-            - mr. halsey
-            - halsey
-            - mr. innes
-        perpetrator:
+        antagonist:
           - Anne Watson:
             - anne watson
             - mrs. watson
             - mis’ watson
         crime:
-          crime_details:
-            or_words:
-              - killed
-              - shot
-              - body
-            positive_lookeaheads:
-              - revolver
-          crime_type:
-            or_words:
-                - fired
-                - killed
-                - murdered
-            positive_lookeaheads:
-                - bullet
+          crime_weapon:
+            - revolver
+          crime_objects:
+            - tmp
       The_Man_in_Lower_Ten:
         url: https://www.gutenberg.org/files/1869/1869-0.txt
-        detectives:
+        protagonists:
           - Richey McKnight: 
             - richey mcknight
             - mcknight
             - mr. mcknight
             - richey
-        suspects:
-          - Wilson Budd Hotchkiss:
-            - wilson budd hotchkiss
-            - hotchkiss
-            - mr. hotchkiss
-          - Henry Pinckney Sullivan:
-            - henry pinckney sullivan
-            - henry sullivan
-            - sullivan
-            - mr. sullivan
-          - Alison West:
-            - alison west
-            - alison
-            - miss west
-        perpetrator:
+        antagonist:
           - Alice Curtis:
             - mrs. curtis
             - curtis
             - alice
             - alice curtis
         crime:
-          crime_details:
-            or_words:
-              - body
-            positive_lookeaheads: null
-          crime_type:
-            or_words:
-              - stabbed
-              - shot
-            positive_lookeaheads:
-              - body
+          crime_weapon:
+            - dagger
+          crime_objects:
+            - tmp
       The_After_House:
         url: https://gutenberg.org/files/2358/2358-0.txt
-        detectives:
+        protagonists:
           - McWhirter:
             - mcwhirter
             - mr. mcwhirter
-        suspects:
-          - Marshall Benedict Turner:
-            - marshall turner
-            - marshall benedict turner
-            - marshall
-            - benedict Turner
-            - mistah Turner
-            - turner
-          - Singleton:
-            - singleton
-          - John Oleson:
-            - John Oleson
-            - Swede Oleson
-            - Swede
-            - Oleson
-        perpetrator:
+        antagonist:
           - Charlie Jones:
             - charlie jones
             - charlie
             - jones
         crime:
-          crime_details:
-            or_words:
-              - pieces
-              - dead
-              - killed
-            positive_lookeaheads:
-              - cut
-          crime_type:
-            or_words:
-              - pieces
-              - dead
-              - killed
-            positive_lookeaheads:
-              - cut
+          crime_weapon:
+            - axe
+          crime_objects:
+            - tmp
       The_Window_at_the_White_Cat:
         url: https://www.gutenberg.org/cache/epub/34020/pg34020.txt
-        detectives:
+        protagonists:
           - Al Hunter:
             - al hunter
             - hunter
-        suspects:
-          - Harry Wardrop:
-            - harry wardrop
-            - wardrop
-            - harry
-          - Henry Schwartz:
-            - henry schwartz 
-            - schwartz
-        perpetrator:
+        antagonist:
           - Ellen Butler:
             - ellen butler
             - mrs. butler
         crime:
-          crime_details:
-            or_words:
-              - shot
-              - killed
-              - murdered
-            positive_lookeaheads:
-              - fleming
-          crime_type:
-            or_words:
-              - shot
-              - killed
-              - murdered
-            positive_lookeaheads:
-              - fleming
+          crime_weapon:
+            - revolver
+          crime_objects:
+            - tmp
       The_Bat:
         url: https://www.gutenberg.org/cache/epub/2019/pg2019.txt
-        detectives:
+        protagonists:
           - Anderson:
-              - anderson
-              - mr. anderson
-        suspects:
-          - Miss Cornelia:
-              - miss cornelia
-          - Brooks:
-              - brooks
-          - Doctor Wells:
-              - doctor wells
-        perpetrator:
+            - anderson
+            - mr. anderson
+        antagonist:
           - The Bat:
-              - bat
-              - the bat
+            - bat
+            - the bat
         crime:
-          crime_details:
-            or_words:
-              - rang
-            positive_lookeaheads:
-              - shot
-          crime_type:
-            or_words:
-              - shot
-              - stabbed
-            positive_lookeaheads:
-              - fleming
+          crime_weapon:
+            - gun
+            - revolver
+          crime_objects:
+            - tmp
 
 
 
