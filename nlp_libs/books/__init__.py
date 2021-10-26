@@ -1,6 +1,6 @@
 """Books sub-package."""
 
-from .preprocessing import *
+from .processed_book import *
 from .word_embeddings import *
 from .compare_statistics import *
 from .plotter import *

@@ -2,6 +2,9 @@ import urllib.request
 import re
 from typing import *
 from nlp_libs.fancy_logger.colorized_logger import ColorizedLogger
+import spacy
+import string
+nlp = spacy.load('en_core_web_sm')
 
 #logger = ColorizedLogger(logger_name='Process Book', color='cyan')
 
@@ -27,8 +30,9 @@ class ProcessedBook:
         self.raw = self.read_book_from_proj_gut(metadata['url'])
         self.book_lines = self.get_book_lines_from_raw()
         self.clean_lines = self.clean_lines()
-        self.clean = ' '.join(self.clean_lines).replace('  ', ' ')
-        self.clean_lower = self.clean.lower()
+        # change from list of lines to string for spacy
+        self.clean_text = ' '.join(self.clean_lines).replace('  ', ' ')
+        self.lemmas = self.lemmatize()
 
     @staticmethod
     def read_book_from_proj_gut(book_url: str) -> str:
@@ -81,3 +85,23 @@ class ProcessedBook:
             return False
         else:
             return True
+
+    def lemmatize(self, lower=True, remove_stopwords=False, remove_punctuation=True):
+        punctuation = string.punctuation
+        text = self.clean_text
+        text = re.sub(r'\u2014', ' ', text)
+        #text = re.sub(r'\u2014', ' ', text)
+        if lower:
+            text = text.lower()
+        text = nlp(text)
+        lemmas = []
+        for word in text:
+            lemma = word.lemma_.strip()
+            if lemma:
+                if not remove_stopwords or (remove_stopwords and lemma not in stops):
+                    if remove_punctuation:
+                        if lemma not in punctuation:
+                            lemmas.append(lemma)
+                    else:
+                        lemmas.append(lemma)
+        return lemmas
