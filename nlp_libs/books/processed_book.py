@@ -9,21 +9,19 @@ nlp = spacy.load('en_core_web_sm')
 #logger = ColorizedLogger(logger_name='Process Book', color='cyan')
 
 class ProcessedBook:
-    title: str
     protagonists: Dict
-    antagonist: Dict
+    antagonists: Dict
     crime_weapon: Dict
     crime_objects: Dict
 
-    def __init__(self, title: str, metadata: Dict):
+    def __init__(self, metadata: Dict):
         """
-        raw holds the books as a single string.
-        clean holds the books as a list of lowercase lines starting
-        from the first chapter and ending with the last sentence.
+        raw is a Project Gutenberg dump
+        clean_text is a single string with some preprocessing
+        lemmas is lemmatized with some more preprocessing
         """
-        self.title = title
         self.protagonists = metadata['protagonists']
-        self.antagonist = metadata['antagonist']
+        self.antagonists = metadata['antagonist']
         self.crime_weapon = metadata['crime']['crime_weapon']
         self.crime_objects = metadata['crime']['crime_objects']
 
