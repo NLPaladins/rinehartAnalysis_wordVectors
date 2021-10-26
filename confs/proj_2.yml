@@ -6,20 +6,17 @@ data_loader:
         url: https://www.gutenberg.org/files/434/434-0.txt
         protagonists:
           - Mr. Jamieson:
-            - mr. jamieson
             - jamieson
-            - mr. winters
             - detective
             - winters
-        antagonist:
+        antagonists:
           - Anne Watson:
             - anne watson
-            - mrs. watson
-            - mis’ watson
+            - watson
         crime:
-          crime_weapon:
+          - crime_weapon:
             - revolver
-          crime_objects:
+          - crime_objects:
             - tmp
       The_Man_in_Lower_Ten:
         url: https://www.gutenberg.org/files/1869/1869-0.txt
@@ -27,34 +24,31 @@ data_loader:
           - Richey McKnight: 
             - richey mcknight
             - mcknight
-            - mr. mcknight
             - richey
-        antagonist:
+        antagonists:
           - Alice Curtis:
-            - mrs. curtis
+            - alice curtis
             - curtis
             - alice
-            - alice curtis
         crime:
-          crime_weapon:
+          - crime_weapon:
             - dagger
-          crime_objects:
+          - crime_objects:
             - tmp
       The_After_House:
         url: https://gutenberg.org/files/2358/2358-0.txt
         protagonists:
           - McWhirter:
             - mcwhirter
-            - mr. mcwhirter
-        antagonist:
+        antagonists:
           - Charlie Jones:
             - charlie jones
             - charlie
             - jones
         crime:
-          crime_weapon:
+          - crime_weapon:
             - axe
-          crime_objects:
+          - crime_objects:
             - tmp
       The_Window_at_the_White_Cat:
         url: https://www.gutenberg.org/cache/epub/34020/pg34020.txt
@@ -62,30 +56,28 @@ data_loader:
           - Al Hunter:
             - al hunter
             - hunter
-        antagonist:
+        antagonists:
           - Ellen Butler:
             - ellen butler
-            - mrs. butler
+            - butler
         crime:
-          crime_weapon:
+          - crime_weapon:
             - revolver
-          crime_objects:
+          - crime_objects:
             - tmp
       The_Bat:
         url: https://www.gutenberg.org/cache/epub/2019/pg2019.txt
         protagonists:
           - Anderson:
             - anderson
-            - mr. anderson
-        antagonist:
+        antagonists:
           - The Bat:
             - bat
-            - the bat
         crime:
-          crime_weapon:
+          - crime_weapon:
             - gun
             - revolver
-          crime_objects:
+          - crime_objects:
             - tmp
 
 

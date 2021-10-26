@@ -2,33 +2,35 @@ import urllib.request
 import re
 from typing import *
 from nlp_libs.fancy_logger.colorized_logger import ColorizedLogger
+import spacy
+import string
+nlp = spacy.load('en_core_web_sm')
 
 #logger = ColorizedLogger(logger_name='Process Book', color='cyan')
 
 class ProcessedBook:
-    title: str
     protagonists: Dict
-    antagonist: Dict
+    antagonists: Dict
     crime_weapon: Dict
     crime_objects: Dict
 
-    def __init__(self, title: str, metadata: Dict):
+    def __init__(self, metadata: Dict):
         """
-        raw holds the books as a single string.
-        clean holds the books as a list of lowercase lines starting
-        from the first chapter and ending with the last sentence.
+        raw is a Project Gutenberg dump
+        clean_text is a single string with some preprocessing
+        lemmas is lemmatized with some more preprocessing
         """
-        self.title = title
         self.protagonists = metadata['protagonists']
-        self.antagonist = metadata['antagonist']
+        self.antagonists = metadata['antagonist']
         self.crime_weapon = metadata['crime']['crime_weapon']
         self.crime_objects = metadata['crime']['crime_objects']
 
         self.raw = self.read_book_from_proj_gut(metadata['url'])
         self.book_lines = self.get_book_lines_from_raw()
         self.clean_lines = self.clean_lines()
-        self.clean = ' '.join(self.clean_lines).replace('  ', ' ')
-        self.clean_lower = self.clean.lower()
+        # change from list of lines to string for spacy
+        self.clean_text = ' '.join(self.clean_lines).replace('  ', ' ')
+        self.lemmas = self.lemmatize()
 
     @staticmethod
     def read_book_from_proj_gut(book_url: str) -> str:
@@ -81,3 +83,23 @@ class ProcessedBook:
             return False
         else:
             return True
+
+    def lemmatize(self, lower=True, remove_stopwords=False, remove_punctuation=True):
+        punctuation = string.punctuation
+        text = self.clean_text
+        text = re.sub(r'\u2014', ' ', text)
+        #text = re.sub(r'\u2014', ' ', text)
+        if lower:
+            text = text.lower()
+        text = nlp(text)
+        lemmas = []
+        for word in text:
+            lemma = word.lemma_.strip()
+            if lemma:
+                if not remove_stopwords or (remove_stopwords and lemma not in stops):
+                    if remove_punctuation:
+                        if lemma not in punctuation:
+                            lemmas.append(lemma)
+                    else:
+                        lemmas.append(lemma)
+        return lemmas
