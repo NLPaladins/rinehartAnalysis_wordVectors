@@ -21,7 +21,7 @@ class ProcessedBook:
         lemmas is lemmatized with some more preprocessing
         """
         self.protagonists = metadata['protagonists']
-        self.antagonists = metadata['antagonist']
+        self.antagonists = metadata['antagonists']
         self.crime_weapon = metadata['crime']['crime_weapon']
         self.crime_objects = metadata['crime']['crime_objects']
 
@@ -31,6 +31,7 @@ class ProcessedBook:
         # change from list of lines to string for spacy
         self.clean_text = ' '.join(self.clean_lines).replace('  ', ' ')
         self.lemmas = self.lemmatize()
+
 
     @staticmethod
     def read_book_from_proj_gut(book_url: str) -> str:
@@ -84,11 +85,28 @@ class ProcessedBook:
         else:
             return True
 
+    def lemmatize_by_sentence(self): 
+        lemmasWpunct = self.lemmatize(remove_punctuation=False)
+        bySentence = ' '.join(lemmasWpunct).split(".")
+        punctuation = string.punctuation
+
+        sentenceList = []
+
+        for sentence in bySentence: 
+            wordlist = []
+            words = sentence.split(' ')
+            for word in words: 
+                if word not in punctuation:
+                    wordlist.append(word)
+
+            sentenceList.append(wordlist)
+
+        return sentenceList
+
     def lemmatize(self, lower=True, remove_stopwords=False, remove_punctuation=True):
         punctuation = string.punctuation
         text = self.clean_text
         text = re.sub(r'\u2014', ' ', text)
-        #text = re.sub(r'\u2014', ' ', text)
         if lower:
             text = text.lower()
         text = nlp(text)
