@@ -21,7 +21,7 @@ def calculate_differing_distances(sentences, wordpairs):
     for vector_size in vector_dimensions:
         for window_size in window_dimensions:
             model = gensim.models.Word2Vec(
-                sentences, vector_size=vector_size, window=window_size)
+                sentences, min_count=1, vector_size=vector_size, window=window_size)
 
             for wordPair in wordpairs: 
                 cosSimilarity = get_distance(wordPair[0], wordPair[1], model.wv, 'cosine')

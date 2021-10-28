@@ -1,3 +1,4 @@
+
 import urllib.request
 import re
 from typing import *
@@ -5,7 +6,6 @@ from nlp_libs.fancy_logger.colorized_logger import ColorizedLogger
 import spacy
 import string
 nlp = spacy.load('en_core_web_sm')
-
 #logger = ColorizedLogger(logger_name='Process Book', color='cyan')
 
 class ProcessedBook:
