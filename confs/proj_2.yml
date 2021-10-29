@@ -17,7 +17,9 @@ data_loader:
           crime_weapon:
             - revolver
           crime_objects:
-            - tmp
+            - staircase
+            - floor
+            - waistcoat
       The_Man_in_Lower_Ten:
         url: https://www.gutenberg.org/files/1869/1869-0.txt
         protagonists:
@@ -34,7 +36,10 @@ data_loader:
           crime_weapon:
             - dagger
           crime_objects:
-            - tmp
+            - watch
+            - diamond
+            - revolver
+            - suit-case
       The_After_House:
         url: https://gutenberg.org/files/2358/2358-0.txt
         protagonists:
@@ -49,7 +54,7 @@ data_loader:
           crime_weapon:
             - axe
           crime_objects:
-            - tmp
+            - cabin
       The_Window_at_the_White_Cat:
         url: https://www.gutenberg.org/cache/epub/34020/pg34020.txt
         protagonists:
@@ -64,7 +69,11 @@ data_loader:
           crime_weapon:
             - revolver
           crime_objects:
-            - tmp
+            - table
+            - papers
+            - ink
+            - pen
+            - tray
       The_Bat:
         url: https://www.gutenberg.org/cache/epub/2019/pg2019.txt
         protagonists:
@@ -78,7 +87,10 @@ data_loader:
             - gun
             - revolver
           crime_objects:
-            - tmp
+            - blueprint
+            - money
+            - revolver
+            - stairs
 
 
 
