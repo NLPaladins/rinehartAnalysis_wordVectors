@@ -5,14 +5,22 @@ data_loader:
       The_Circular_Staircase:
         url: https://www.gutenberg.org/files/434/434-0.txt
         protagonists:
-          - Mr. Jamieson:
-            - jamieson
-            - detective
-            - winters
+          Mr. Jamieson:
+          - jamieson
+          - detective
+          - winters
+        suspects: 
+          John Bailey: 
+          - john
+          - jack
+          Gertrude Innes: 
+          - gertrude
+          Halsey Innes: 
+          - halsey
         antagonists:
-          - Anne Watson:
-            - anne watson
-            - watson
+          Anne Watson:
+          - anne
+          - watson
         crime:
           crime_weapon:
             - revolver
@@ -21,15 +29,28 @@ data_loader:
       The_Man_in_Lower_Ten:
         url: https://www.gutenberg.org/files/1869/1869-0.txt
         protagonists:
-          - Richey McKnight: 
-            - richey mcknight
-            - mcknight
-            - richey
+          Richey McKnight: 
+          - richey
+          - mcknight
+          - richey
+          - detective
+        suspects: 
+          Wilson Budd Hotchkiss:
+          - wilson
+          - budd
+          - hotchkiss
+          Henry Pinckney Sullivan:
+          - henry
+          - sullivan
+          - pinckney
+          Alison West:
+          - alison
+          - west
         antagonists:
-          - Alice Curtis:
-            - alice curtis
-            - curtis
-            - alice
+          Alice Curtis:
+          - alice
+          - curtis
+          - alice
         crime:
           crime_weapon:
             - dagger
@@ -38,13 +59,24 @@ data_loader:
       The_After_House:
         url: https://gutenberg.org/files/2358/2358-0.txt
         protagonists:
-          - McWhirter:
-            - mcwhirter
+          McWhirter:
+          - mcwhirter
+          - detective
+        suspects: 
+          Marshall Benedict Turner:
+          - marshall
+          - benedict
+          - turner
+          Singleton:
+          - singleton
+          John Oleson:
+          - john
+          - swede
+          - oleson
         antagonists:
-          - Charlie Jones:
-            - charlie jones
-            - charlie
-            - jones
+          Charlie Jones:
+          - charlie
+          - jones
         crime:
           crime_weapon:
             - axe
@@ -53,13 +85,21 @@ data_loader:
       The_Window_at_the_White_Cat:
         url: https://www.gutenberg.org/cache/epub/34020/pg34020.txt
         protagonists:
-          - Al Hunter:
-            - al hunter
-            - hunter
+          Al Hunter:
+          - al
+          - hunter
+          - detective
+        suspects: 
+          Harry Wardrop:
+          - wardrop
+          - harry
+          Henry Schwartz:
+          - henry 
+          - schwartz
         antagonists:
-          - Ellen Butler:
-            - ellen butler
-            - butler
+          Ellen Butler:
+          - ellen
+          - butler
         crime:
           crime_weapon:
             - revolver
@@ -68,11 +108,20 @@ data_loader:
       The_Bat:
         url: https://www.gutenberg.org/cache/epub/2019/pg2019.txt
         protagonists:
-          - Anderson:
-            - anderson
+          Anderson:
+          - anderson
+          - detective
+        suspects:
+          Miss Cornelia:
+          - cornelia
+          Brooks:
+          - brooks
+          Doctor Wells:
+          - doctor
+          -  wells
         antagonists:
-          - The Bat:
-            - bat
+          The Bat:
+          - bat
         crime:
           crime_weapon:
             - gun

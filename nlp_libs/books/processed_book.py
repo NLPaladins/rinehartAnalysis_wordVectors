@@ -22,6 +22,7 @@ class ProcessedBook:
         """
         self.protagonists = metadata['protagonists']
         self.antagonists = metadata['antagonists']
+        self.suspects = metadata['suspects']
         self.crime_weapon = metadata['crime']['crime_weapon']
         self.crime_objects = metadata['crime']['crime_objects']
 
