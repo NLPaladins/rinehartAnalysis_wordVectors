@@ -4,9 +4,11 @@ from typing import *
 from nlp_libs.fancy_logger.colorized_logger import ColorizedLogger
 import spacy
 import string
+
 nlp = spacy.load('en_core_web_sm')
 
-#logger = ColorizedLogger(logger_name='Process Book', color='cyan')
+
+# logger = ColorizedLogger(logger_name='Process Book', color='cyan')
 
 class ProcessedBook:
     protagonists: Dict
@@ -47,7 +49,8 @@ class ProcessedBook:
         for i, line in enumerate(lines):
             # match chapters for book start and for 
             # removing chapter headers and titles
-            if re.search(r'^ *((CHAPTER|Chapter) [A-Z]+\.?)\n$', line) or re.search(r'^ *[IVXLCDM]+\.?\n$', line):
+            if re.search(r'^ *((CHAPTER|Chapter) [A-Z]+\.?)\n$', line) or re.search(
+                    r'^ *[IVXLCDM]+\.?\n$', line):
                 start = True
                 chapter_start = True
                 continue
@@ -84,17 +87,17 @@ class ProcessedBook:
         else:
             return True
 
-    def lemmatize_by_sentence(self, word_subs=None): 
+    def lemmatize_by_sentence(self, word_subs=None):
         lemmasWpunct = self.lemmatize(remove_punctuation=False, word_subs=word_subs)
         bySentence = ' '.join(lemmasWpunct).split(".")
         punctuation = string.punctuation
 
         sentenceList = []
 
-        for sentence in bySentence: 
+        for sentence in bySentence:
             wordlist = []
             words = sentence.split(' ')
-            for word in words: 
+            for word in words:
                 if word not in punctuation:
                     wordlist.append(word)
 

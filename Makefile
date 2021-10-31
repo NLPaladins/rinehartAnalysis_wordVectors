@@ -69,6 +69,7 @@ create_env:
 	eval $(CREATE_COMMAND)
 setup:
 	$(BIN)/python setup.py install $(SETUP_FLAG)
+	$(BIN)/python -m spacy download en
 
 
 .PHONY: help install clean delete_env create_env setup
