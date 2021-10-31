@@ -84,8 +84,8 @@ class ProcessedBook:
         else:
             return True
 
-    def lemmatize_by_sentence(self): 
-        lemmasWpunct = self.lemmatize(remove_punctuation=False)
+    def lemmatize_by_sentence(self, word_subs=None): 
+        lemmasWpunct = self.lemmatize(remove_punctuation=False, word_subs=word_subs)
         bySentence = ' '.join(lemmasWpunct).split(".")
         punctuation = string.punctuation
 
