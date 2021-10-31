@@ -32,7 +32,6 @@ class ProcessedBook:
         self.clean_text = ' '.join(self.clean_lines).replace('  ', ' ')
         self.lemmas = self.lemmatize()
 
-
     @staticmethod
     def read_book_from_proj_gut(book_url: str) -> str:
         req = urllib.request.Request(book_url)
@@ -103,12 +102,18 @@ class ProcessedBook:
 
         return sentenceList
 
-    def lemmatize(self, lower=True, remove_stopwords=False, remove_punctuation=True):
+    def lemmatize(self, lower=True, remove_stopwords=False, remove_punctuation=True, word_subs=None):
+        # if word_subs is not None, it is expecting the format
+        # ([word1, word2, ...], word_to_sub_to), where the list
+        # of words in the tuple are words to change and where
+        # word_to_sub_to is the word to change them to
         punctuation = string.punctuation
         text = self.clean_text
         text = re.sub(r'\u2014', ' ', text)
         if lower:
             text = text.lower()
+        if word_subs:
+            text = self.substitute_words_to_word(text, word_subs)
         text = nlp(text)
         lemmas = []
         for word in text:
@@ -121,3 +126,9 @@ class ProcessedBook:
                     else:
                         lemmas.append(lemma)
         return lemmas
+
+    def substitute_words_to_word(self, text, word_subs):
+        words_to_sub, word_sub = word_subs
+        for word in words_to_sub:
+            text = re.sub(word, word_sub, text)
+        return text
