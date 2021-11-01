@@ -15,7 +15,7 @@ def calculate_differing_distances(word_pairs: List[Tuple[str]],
 
     if model_names is not None:
         df = pd.DataFrame(
-            columns=['word1', 'word2', 'model', 'cosineSim', 'dotSim'])
+            columns=['word1', 'word2', 'model_name', 'cosineSim', 'dotSim'])
         for model_name in model_names:
             wv = get_model_wv(model_name)
             df = get_word_pair_distances(df=df, wv=wv, word_pairs=word_pairs,
