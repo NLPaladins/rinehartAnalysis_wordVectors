@@ -72,7 +72,7 @@ def get_word_pair_distances(df: pd.DataFrame,
 
         df = df.append(data, ignore_index=True)
 
-        return df
+    return df
 
 
 def get_model_names() -> List[str]:
