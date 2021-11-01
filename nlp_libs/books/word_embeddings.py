@@ -7,10 +7,15 @@ from typing import *
 
 
 def get_distance(word1, word2, wv, dist_type='cosine'):
-    distance = wv.similarity(word1, word2) if dist_type == 'cosine' \
-        else np.dot(wv[word1], wv[word2])
-
-    return distance
+    if word1 not in wv.index_to_key:
+        print(f"{word1} not in vocabulary! Skipping..")
+    elif word2 not in wv.index_to_key:
+        print(f"{word2} not in vocabulary! Skipping..")
+        return None
+    else:
+        distance = wv.similarity(word1, word2) if dist_type == 'cosine' \
+            else np.dot(wv[word1], wv[word2])
+        return distance
 
 
 def calculate_differing_distances(sentences, wordpairs):
@@ -27,6 +32,8 @@ def calculate_differing_distances(sentences, wordpairs):
             for wordPair in wordpairs:
                 cosSimilarity = get_distance(wordPair[0], wordPair[1], model.wv, 'cosine')
                 dotSimilarity = get_distance(wordPair[0], wordPair[1], model.wv, 'dot')
+                if cosSimilarity is None or dotSimilarity is None:
+                    continue
                 data = {
                     "word1": wordPair[0],
                     "word2": wordPair[1],
