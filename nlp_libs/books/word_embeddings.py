@@ -1,4 +1,4 @@
-from gensim.matutils import cossim
+from gensim.test.utils import common_texts
 import gensim.models
 import numpy as np
 import pandas as pd
@@ -6,11 +6,16 @@ import itertools
 from typing import *
 
 
-def get_distance(word1, word2, wv, dist_type='cosine'):
+def get_distance(word1, word2, wv, skipped_words: List[str], dist_type='cosine'):
     if word1 not in wv.index_to_key:
-        print(f"{word1} not in vocabulary! Skipping..")
+        if word1 not in skipped_words:
+            print(f"{word1} not in vocabulary! Skipping..")
+            skipped_words.append(word1)
+        return None
     elif word2 not in wv.index_to_key:
-        print(f"{word2} not in vocabulary! Skipping..")
+        if word2 not in skipped_words:
+            print(f"{word2} not in vocabulary! Skipping..")
+            skipped_words.append(word2)
         return None
     else:
         distance = wv.similarity(word1, word2) if dist_type == 'cosine' \
@@ -18,7 +23,11 @@ def get_distance(word1, word2, wv, dist_type='cosine'):
         return distance
 
 
-def calculate_differing_distances(sentences, wordpairs):
+def calculate_differing_distances(wordpairs, sentences):
+    """ If sentences is None, use pretrained"""
+    if sentences is None:
+        sentences = common_texts
+    skipped_words = []
     vector_dimensions = [50, 100, 200, 300]
     window_dimensions = [2, 5, 3, 10]
 
@@ -30,8 +39,10 @@ def calculate_differing_distances(sentences, wordpairs):
                 sentences, vector_size=vector_size, window=window_size, min_count=2)
 
             for wordPair in wordpairs:
-                cosSimilarity = get_distance(wordPair[0], wordPair[1], model.wv, 'cosine')
-                dotSimilarity = get_distance(wordPair[0], wordPair[1], model.wv, 'dot')
+                cosSimilarity = get_distance(wordPair[0], wordPair[1],
+                                             model.wv, skipped_words, 'cosine')
+                dotSimilarity = get_distance(wordPair[0], wordPair[1],
+                                             model.wv, skipped_words, 'dot')
                 if cosSimilarity is None or dotSimilarity is None:
                     continue
                 data = {
