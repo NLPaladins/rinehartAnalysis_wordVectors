@@ -40,18 +40,22 @@ def calculate_differing_distances(sentences, wordpairs):
     return df
 
 
-def get_conf_values(conf: Dict, keys: List[str], get_all_sub_values: bool) -> List[str]:
+def get_conf_values(conf: Dict, keys: List[str], get_all_sub_values: bool,
+                    ignore_words_with_spaces: bool) -> List[str]:
     for key in keys:
         conf = conf[key]
     if get_all_sub_values:
-        return [val for val_list in conf for val in list(val_list.values())[0]]
+        return [val for val_list in conf
+                for val in list(val_list.values())[0]
+                if not (ignore_words_with_spaces and ' ' in val)]
     else:
-        return [val for val in conf]
+        return [val for val in conf if not (ignore_words_with_spaces and ' ' in val)]
 
 
 def get_combinations(conf: Dict, keys_1: List[str], keys_2: List[str],
-                     get_all_sub_values_1: bool, get_all_sub_values_2: bool) -> list[tuple[str, str]]:
-    values_1 = get_conf_values(conf, keys_1, get_all_sub_values_1)
-    values_2 = get_conf_values(conf, keys_2, get_all_sub_values_2)
+                     get_all_sub_values_1: bool, get_all_sub_values_2: bool,
+                     ignore_words_with_spaces: bool) -> list[tuple[str, str]]:
+    values_1 = get_conf_values(conf, keys_1, get_all_sub_values_1, ignore_words_with_spaces)
+    values_2 = get_conf_values(conf, keys_2, get_all_sub_values_2, ignore_words_with_spaces)
     combinations = list(itertools.product(values_1, values_2))
     return combinations
