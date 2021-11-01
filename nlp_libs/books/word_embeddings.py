@@ -30,7 +30,9 @@ def calculate_differing_distances(sentences, wordpairs, vector_dimensions=[50, 1
     df = pd.DataFrame(columns=columns)
 
     pool = mp.Pool(mp.cpu_count())
-    
+
+## TODO: Calculate the frequency of the words. Take top x% and use the min(frequentWordCount)
+
     for vector_size in vector_dimensions:
         for window_size in window_dimensions:
             model = gensim.models.Word2Vec(
