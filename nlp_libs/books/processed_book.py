@@ -122,7 +122,7 @@ class ProcessedBook:
         for word in text:
             lemma = word.lemma_.strip()
             if lemma:
-                if not remove_stopwords or (remove_stopwords and lemma not in stops):
+                if not remove_stopwords or (remove_stopwords and lemma not in lemmas):
                     if remove_punctuation:
                         if lemma not in punctuation:
                             lemmas.append(lemma)
