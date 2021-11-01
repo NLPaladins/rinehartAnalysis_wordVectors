@@ -116,7 +116,7 @@ def get_conf_values(conf: Dict, keys: List[str], get_all_sub_values: bool,
 
 def get_combinations(conf: Dict, keys_1: List[str], keys_2: List[str],
                      get_all_sub_values_1: bool, get_all_sub_values_2: bool,
-                     ignore_words_with_spaces: bool) -> list[tuple[str, str]]:
+                     ignore_words_with_spaces: bool) -> List[Tuple[str, str]]:
     values_1 = get_conf_values(conf, keys_1, get_all_sub_values_1, ignore_words_with_spaces)
     values_2 = get_conf_values(conf, keys_2, get_all_sub_values_2, ignore_words_with_spaces)
     combinations = list(itertools.product(values_1, values_2))
